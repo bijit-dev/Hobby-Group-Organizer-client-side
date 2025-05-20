@@ -4,6 +4,11 @@ import Home from "../Home/Home";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
+import MyGroup from "../MyGroup/MyGroup";
+import Profile from "../Profile/Profile";
+import AllGroups from "../AllGroups/AllGroups";
+import CreateGroup from "../CreateGroup/CreateGroup";
+import PrivateRouter from "./PrivateRouter";
 
 
 export const router = createBrowserRouter([
@@ -24,10 +29,22 @@ export const router = createBrowserRouter([
                 path: "/register",
                 Component: Register
             },
-            // {
-            //     path: "/profile",
-            //     element: <PrivateRouter><Profile></Profile></PrivateRouter>
-            // },
+            {
+                path: "/myGroup",
+                Component: MyGroup
+            },
+            {
+                path: "/allGroups",
+                Component: AllGroups
+            },
+            {
+                path: "/createGroup",
+                Component: CreateGroup
+            },
+            {
+                path: "/profile",
+                element: <PrivateRouter><Profile></Profile></PrivateRouter>
+            },
         ]
     },
     {
