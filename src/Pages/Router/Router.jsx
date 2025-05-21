@@ -9,6 +9,7 @@ import Profile from "../Profile/Profile";
 import AllGroups from "../AllGroups/AllGroups";
 import CreateGroup from "../CreateGroup/CreateGroup";
 import PrivateRouter from "./PrivateRouter";
+import GroupDetails from "../GroupDetails/GroupDetails";
 
 
 export const router = createBrowserRouter([
@@ -30,16 +31,22 @@ export const router = createBrowserRouter([
                 Component: Register
             },
             {
-                path: "/allGroups",
-                Component: AllGroups
-            },
-            {
                 path: "/createGroup",
                 element: <PrivateRouter><CreateGroup></CreateGroup></PrivateRouter>
             },
             {
+                path: "/allGroups",
+                loader: () => fetch('http://localhost:3000/groups'),
+                Component: AllGroups
+            },
+            {
                 path: "/myGroup",
+                loader: () => fetch('http://localhost:3000/groups'),
                 element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
+            },
+            {
+                path: "/groupDetails/:id",
+                element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },
             {
                 path: "/profile",
