@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { useLoaderData } from "react-router";
-import GroupCard from "../../components/Card/GroupCard";
+import GroupCard from "./GroupCard";
 
 
 const AllGroups = () => {

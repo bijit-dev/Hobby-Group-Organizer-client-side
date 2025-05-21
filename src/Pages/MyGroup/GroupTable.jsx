@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 
 const GroupTable = ({ group }) => {
@@ -21,7 +22,9 @@ const GroupTable = ({ group }) => {
             <td className="text-center">{maxMembers}</td>
             <td>{startDate}</td>
             <th>
-                <button className="btn btn-info btn-outline btn-sm hover:text-white">Info</button>
+                <Link to={`/groupDetails/ ${_id}`}>
+                    <button className="btn btn-info btn-outline btn-sm hover:text-white">Info</button>
+                </Link>
             </th>
             <th>
                 <button className="btn btn-success  btn-sm hover:text-white">Update</button>
