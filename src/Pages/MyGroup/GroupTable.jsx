@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 
-
 const GroupTable = ({ group }) => {
     const { _id, name, Category, maxMembers, startDate, imageURL } = group;
 

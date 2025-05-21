@@ -89,10 +89,8 @@ const Register = () => {
 
                     {/* photoURL field */}
                     <label className="label">PhotoURL</label>
-                    <label className="input">
-                        <span className="label">https://</span>
-                        <input type="text" name='PhotoUrl' placeholder="URL" />
-                    </label>
+                    <input type="URL" name='PhotoUrl' className="input" placeholder="PhotoUrl" />
+                    
 
                     {/* email input */}
                     <label className="label">Email</label>
