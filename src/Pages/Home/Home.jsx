@@ -1,10 +1,12 @@
-import React from 'react';
+import Slider from '../../components/Slider/Slider';
 
 const Home = () => {
     return (
-        <div>
-            home 
-        </div>
+        <section className='my-12'>
+            <Slider></Slider>
+
+
+        </section>
     );
 };
 

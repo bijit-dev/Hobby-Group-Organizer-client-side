@@ -30,16 +30,16 @@ export const router = createBrowserRouter([
                 Component: Register
             },
             {
-                path: "/myGroup",
-                Component: MyGroup
-            },
-            {
                 path: "/allGroups",
                 Component: AllGroups
             },
             {
                 path: "/createGroup",
-                Component: CreateGroup
+                element: <PrivateRouter><CreateGroup></CreateGroup></PrivateRouter>
+            },
+            {
+                path: "/myGroup",
+                element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
             },
             {
                 path: "/profile",
