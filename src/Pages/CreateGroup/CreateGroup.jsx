@@ -12,7 +12,7 @@ const CreateGroup = () => {
         const newGroup = Object.fromEntries(formData.entries())
 
         // send coffee data to the db
-        fetch('http://localhost:3000/hobbies', {
+        fetch('http://localhost:3000/groups', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -2,20 +2,30 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import logo from '../../assets/react.svg'
 import { use } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext)
     const Navigate = useNavigate();
-    
+
 
     const handleSignOut = () => {
         signOutUser().then(() => {
             // Sign-out successful.
             Navigate("/login");
+            Swal.fire({
+                title: "Log Out successfully!",
+                icon: "success",
+                draggable: true
+            });
 
         }).catch((error) => {
-            // An error happened.
-            console.log(error);
+            const errorMessage = error.message;
+            Swal.fire({
+                title: errorMessage,
+                icon: "error",
+                draggable: true
+            });
 
         });
     }
@@ -66,7 +76,7 @@ const Navbar = () => {
                             </Link>
                             <button onClick={handleSignOut} className='btn btn-primary hover:btn-success rounded-lg'>Log Out</button>
                         </> :
-                            <NavLink to="/login" className={({ isActive }) => isActive ? "active btn btn-success rounded-lg" : "btn btn-primary hover:btn-success rounded-lg"}>LOGIN</NavLink>
+                        <NavLink to="/login" className={({ isActive }) => isActive ? "active btn btn-success rounded-lg" : "btn btn-primary hover:btn-success rounded-lg"}>LOGIN</NavLink>
                     }
 
                 </div>
