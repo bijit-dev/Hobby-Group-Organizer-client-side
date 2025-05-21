@@ -7,7 +7,7 @@ const AllGroups = () => {
     const groups = useLoaderData();
 
     return (
-        <div className=" container mx-auto px-4 mt-10 mb-16">
+        <div className=" container mx-auto px-4 mt-10 mb-16 ">
                     <div className="overflow-x-auto">
                         <table className="table table-zebra">
                             {/* head */}

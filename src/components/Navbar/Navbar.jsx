@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from 'react-router';
-import logo from '../../assets/react.svg'
+import logo from '/public/assets/logo.png'
 import { use } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import Swal from 'sweetalert2';
@@ -43,7 +43,7 @@ const Navbar = () => {
     return (
         <nav className="navbar sticky top-0 z-20 bg-base-100/80 shadow-sm container mx-auto px-4">
             <div className="navbar-start">
-                <a className="btn btn-ghost text-xl"><img className='w-14 font-bold' src={logo} alt="logo" />HGB</a>
+                <a className="btn btn-ghost text-xl "><img className='w-14 font-bold' src={logo} alt="logo" />HGB</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -59,8 +59,22 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {lists}
-                        <NavLink to="/login" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg " : "text-lg"}>Login</NavLink>
-                        <NavLink to="/register" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg" : "text-lg"}>Register</NavLink>
+                        {
+                            user ? <>
+                                <Link to="/profile">
+                                    <div className="avatar">
+                                        <div className="w-12 rounded-full">
+                                            <img title={user.displayName} src={user.photoURL} />
+                                        </div>
+                                    </div>
+                                </Link>
+                                <button onClick={handleSignOut} className='btn btn-primary hover:btn-error rounded-lg'>Log Out</button>
+                            </> : <>
+
+                                <NavLink to="/login" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg " : "text-lg"}>Login</NavLink>
+                                <NavLink to="/register" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg" : "text-lg"}>Register</NavLink>
+                            </>
+                        }
                     </ul>
                 </div>
                 <div className='hidden lg:flex gap-3 items-center'>
@@ -74,7 +88,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
                             </Link>
-                            <button onClick={handleSignOut} className='btn btn-primary hover:btn-success rounded-lg'>Log Out</button>
+                            <button onClick={handleSignOut} className='btn btn-primary hover:btn-error rounded-lg'>Log Out</button>
                         </> :
                         <NavLink to="/login" className={({ isActive }) => isActive ? "active btn btn-success rounded-lg" : "btn btn-primary hover:btn-success rounded-lg"}>LOGIN</NavLink>
                     }

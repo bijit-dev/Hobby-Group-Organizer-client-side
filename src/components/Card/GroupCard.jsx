@@ -23,7 +23,7 @@ const GroupCard = ({ group }) => {
             <td>{startDate}</td>
             
             <Link to={`/groupDetails/ ${_id}`}>
-                <button className='btn w-full mt-4 btn-info text-white'>See More</button>
+                <button className='btn w-full mt-4 btn-primary btn-soft hover:text-white'>See More</button>
             </Link>
         </tr>
 
