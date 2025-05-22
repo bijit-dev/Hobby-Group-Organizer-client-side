@@ -2,7 +2,7 @@ import Slider from '../../components/Slider/Slider';
 
 const Home = () => {
     return (
-        <section className='my-12'>
+        <section className='mb-12'>
             <Slider></Slider>
 
 

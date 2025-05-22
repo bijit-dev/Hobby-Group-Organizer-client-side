@@ -1,15 +1,19 @@
 import { useLoaderData } from "react-router";
 import GroupTable from "./GroupTable";
-import { use } from "react";
+import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 
 const MyGroup = () => {
-    const groups = useLoaderData();
-        
-    const { user } = use(AuthContext);
-    const myGroups = groups.filter((data) => data.userEmail === user.email)
+    const initialGroups = useLoaderData();
 
-        
+    const { user } = use(AuthContext);
+
+    
+    const [groups, setGroups]= useState([])
+    useEffect(() => {
+        const myGroups = initialGroups?.filter((data) => data.userEmail === user.email) || [];
+        setGroups(myGroups);
+    }, [initialGroups, user.email]);
 
     return (
         <div className=" container mx-auto px-4 my-10">
@@ -31,7 +35,7 @@ const MyGroup = () => {
                     <tbody>
                         
                         {
-                            myGroups.map(group => <GroupTable key={group._id} group={group} />)
+                            groups?.map(group => <GroupTable key={group._id} group={group} groups={groups} setGroups={setGroups} />)
                         }
 
                     </tbody>

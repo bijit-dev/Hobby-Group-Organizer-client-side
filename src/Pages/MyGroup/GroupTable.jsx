@@ -1,7 +1,50 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
-const GroupTable = ({ group }) => {
+const GroupTable = ({ group, groups, setGroups }) => {
+    const Navigate = useNavigate();
     const { _id, name, Category, maxMembers, startDate, imageURL } = group;
+
+    const handleUpdate = (_id) => {
+        Navigate(`/updateGroup/${_id}`);
+}
+    
+    const handleDelete = (_id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                // start deleting the group
+                fetch(`http://localhost:3000/groups/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Coffee has been deleted.",
+                                icon: "success"
+                            });
+
+                            // remove the group from the state
+                            const remainingGroup = groups?.filter(g => g._id !== _id);
+                            setGroups(remainingGroup);
+                        }
+                    })
+
+
+            }
+        });
+
+    }
 
     return (
         <tr>
@@ -26,10 +69,10 @@ const GroupTable = ({ group }) => {
                 </Link>
             </th>
             <th>
-                <button className="btn btn-success  btn-sm hover:text-white">Update</button>
+                <button onClick={()=>handleUpdate(_id)} className="btn btn-success  btn-sm hover:text-white">Update</button>
             </th>
             <th>
-                <button className="btn btn-error hover:bg-red-500 hover:text-white  btn-sm">Delete</button>
+                <button onClick={()=>handleDelete(_id)} className="btn btn-error hover:bg-red-500 hover:text-white  btn-sm">Delete</button>
             </th>
         </tr>
     );

@@ -1,6 +1,8 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Logo from "../../assets/react.svg"
+import BannerImg1 from "../../assets/banner/banner1.jpg"
+import BannerImg2 from "../../assets/banner/banner2.jpg"
+import BannerImg3 from "../../assets/banner/banner3.jpg"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -27,9 +29,12 @@ const Slider = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide><Slide imges={Logo} title="Sporting events in Dhaka" semeTitle="Tournaments, tickets and marathons in Dhaka" detile="Sports is about bettering ourselves. It's more about self-improvement, beating one's own record every day every moment. It helps us to gain the sportsmanship attitude not just towards game but towards life. While every sport follows different rules, participating in sports activities will help your brain take decisions faster. Participate in the sports events in Dhaka like a football tournament, cricket, basketball, rugby/soccer, etc to helps to build your stamina."></Slide></SwiperSlide>
-                <SwiperSlide><Slide imges={Logo} semeTitle="Sporting events in Dhaka" title="Bangladesh International Marathon 2025" detile="International marathon run event at Bangladesh, organised by 'LIMELIGHT SPORTS'. Run for a good health & enjoy the beauty of Bangladesh by joining this mega event. Any male & female person from around the world can participate in this mega event.."></Slide></SwiperSlide>
-                <SwiperSlide><Slide imges={Logo} title="Dhaka Summer Half Marathon 2025" semeTitle="Sporting events in Dhaka" detile="Sports is about bettering ourselves. It's more about self-improvement, beating one's own record every day every moment. It helps us to gain the sportsmanship attitude not just towards game but towards life. While every sport follows different rules, participating in sports activities will help your brain take decisions faster. Participate in the sports events in Dhaka like a football tournament, cricket, basketball, rugby/soccer, etc to helps to build your stamina."></Slide></SwiperSlide>
+                <SwiperSlide><Slide imges={BannerImg1} title="Create Your Favorite Hobbies" detile="I love photography, traveling to new places, reading inspiring books, coding creative projects, and enjoying peaceful music in my free time." button="Create Hobbies" to="/createGroup"></Slide></SwiperSlide>
+                
+                <SwiperSlide><Slide imges={BannerImg2} title="Create New Group" detile="I love photography, traveling to new places, reading inspiring books, coding creative projects, and enjoying peaceful music in my free time." button="Create Group" to="/createGroup"></Slide></SwiperSlide>
+
+                <SwiperSlide><Slide imges={BannerImg3} title="My Group" detile="My All Group" button="My Group" to="/myGroup"></Slide></SwiperSlide>
+                
             </Swiper>
         </>
     );

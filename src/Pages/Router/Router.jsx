@@ -10,6 +10,8 @@ import AllGroups from "../AllGroups/AllGroups";
 import CreateGroup from "../CreateGroup/CreateGroup";
 import PrivateRouter from "./PrivateRouter";
 import GroupDetails from "../GroupDetails/GroupDetails";
+import Loader from "../../components/Loader";
+import UpdateGroup from "../UpdateGroup/UpdateGroup";
 
 
 export const router = createBrowserRouter([
@@ -42,10 +44,19 @@ export const router = createBrowserRouter([
             {
                 path: "/myGroup",
                 loader: () => fetch('http://localhost:3000/groups'),
+                hydrateFallbackElement: <Loader/>,
                 element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
             },
             {
+                path: "/updateGroup/:id",
+                loader: () => fetch('http://localhost:3000/groups'),
+                hydrateFallbackElement: <Loader/>,
+                element: <PrivateRouter><UpdateGroup></UpdateGroup></PrivateRouter>
+            },
+            {
                 path: "/groupDetails/:id",
+                loader: () => fetch('http://localhost:3000/groups'),
+                hydrateFallbackElement: <Loader/>,
                 element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },
             {
