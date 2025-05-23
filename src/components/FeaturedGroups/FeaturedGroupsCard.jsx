@@ -26,7 +26,7 @@ const FeaturedGroupsCard = ({ group }) => {
                     </div>
                     <h2 className="card-title text-3xl">{name}</h2>
                     <p className="text-lg font-medium">Category: <span className="text-gray-500">{Category}</span></p>
-                    <p className="text-base font-medium text-justify">Description: <span className="text-gray-500">{description}</span></p>
+                    <p className="text-base font-medium text-justify  leading-relaxed line-clamp-2">Description: <span className="text-gray-500">{description}</span></p>
 
                 </div>
                 <div className="px-6 pb-6">
