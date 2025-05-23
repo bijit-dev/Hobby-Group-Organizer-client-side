@@ -4,8 +4,8 @@ const FeaturedGroups = ({ data }) => {
     const newData = data.slice(0, 6);
 
     return (
-        <section className=" py-12 bg-gray-100 rounded-lg">
-            <div className=" container mx-auto px-5 my-12 bg-gray-100 rounded-lg">
+        <section className=" pb-12 rounded-lg">
+            <div className=" container mx-auto px-5 my-12 rounded-lg">
                 <div className="text-center py-8">
                     <h1 className="text-lg md:text-2xl lg:text-4xl font-bold text-accent">Featured Groups</h1>
                 </div>
