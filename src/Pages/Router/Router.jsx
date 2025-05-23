@@ -18,7 +18,6 @@ export const router = createBrowserRouter([
     {
         path: "/",
         Component: App,
-        // errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 index: true,
@@ -38,24 +37,24 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allGroups",
-                loader: () => fetch('http://localhost:3000/groups'),
+                loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 Component: AllGroups
             },
             {
                 path: "/myGroup",
-                loader: () => fetch('http://localhost:3000/groups'),
+                loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 hydrateFallbackElement: <Loader/>,
                 element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
             },
             {
                 path: "/updateGroup/:id",
-                loader: () => fetch('http://localhost:3000/groups'),
+                loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 hydrateFallbackElement: <Loader/>,
                 element: <PrivateRouter><UpdateGroup></UpdateGroup></PrivateRouter>
             },
             {
                 path: "/groupDetails/:id",
-                loader: () => fetch('http://localhost:3000/groups'),
+                loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 hydrateFallbackElement: <Loader/>,
                 element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },

@@ -12,7 +12,7 @@ const CreateGroup = () => {
         const newGroup = Object.fromEntries(formData.entries())
 
         // send coffee data to the db
-        fetch('http://localhost:3000/groups', {
+        fetch('https://group-server-six.vercel.app/groups/groups', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

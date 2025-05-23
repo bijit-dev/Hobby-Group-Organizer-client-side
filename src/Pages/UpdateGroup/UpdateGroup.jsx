@@ -1,7 +1,6 @@
 import { useLoaderData, useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
 
-
 const UpdateGroup = () => {
     const initialGroups = useLoaderData();
     const { id } = useParams();
@@ -9,16 +8,14 @@ const UpdateGroup = () => {
     const updateGroupData = initialGroups?.find((data) => data._id === id);
     const { _id, name, Category, meetingLocation, maxMembers, startDate, imageURL, userName, userEmail, description } = updateGroupData;
 
-
     const handleUpdateGroup = e => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const newGroup = Object.fromEntries(formData.entries())
-        console.log(newGroup);
 
         // send updated coffee to the db
-        fetch(`http://localhost:3000/groups/${_id}`, {
+        fetch(`https://group-server-six.vercel.app/groups/groups/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
