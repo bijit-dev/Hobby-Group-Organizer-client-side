@@ -1,10 +1,15 @@
 import FeaturedGroupsCard from "./FeaturedGroupsCard";
 
 const FeaturedGroups = ({ data }) => {
-    const newData = data.slice(0, 6);
+    // const newData = data.slice(0, 6);
+    const newData = data.filter(group => {
+        const startDate = new Date(group.startDate);
+        const today = new Date();
+        return startDate >= today;
+    }).slice(0, 6);
 
     return (
-        <section className=" pb-12 rounded-lg">
+        <section className="pb-12 rounded-lg">
             <div className=" container mx-auto px-5 my-12 rounded-lg">
                 <div className="text-center py-8">
                     <h1 className="text-lg md:text-2xl lg:text-4xl font-bold text-accent">Featured Groups</h1>

@@ -20,15 +20,10 @@ const { name, Category, meetingLocation, maxMembers, startDate, imageURL, descri
 
 // join group hendle 
 const sDate = new Date(startDate);
-const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
-const formattedStartDate = sDate.toLocaleDateString('en-US', options1);
-
 const toDay = new Date();
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-const formattedDate = toDay.toLocaleDateString('en-US', options);
 
 const handleJoin = () => {
-    if (formattedStartDate >= formattedDate) {
+    if (sDate >= toDay) {
         Swal.fire({
             icon: "success",
             title: "You have successfully joined the group",

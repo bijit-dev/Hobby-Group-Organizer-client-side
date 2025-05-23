@@ -25,7 +25,7 @@ const UpdateGroup = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    Navigate("/myGroup");
+                    Navigate("/myGroups");
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
