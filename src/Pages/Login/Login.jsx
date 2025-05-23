@@ -19,9 +19,7 @@ const Login = () => {
         const password = e.target.password.value;
 
         // login 
-        signIn(email, password).then(result => {
-            const user = result.user;
-            console.log("login", user);
+        signIn(email, password).then(() => {
             Navigate(location?.state || '/')            
             Swal.fire({
                 title: "Login successfully!",

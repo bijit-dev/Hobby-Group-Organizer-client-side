@@ -5,6 +5,7 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth } from "../../firebase/firebase.init";
+import Swal from "sweetalert2";
 
 
 const Profile = () => {
@@ -15,7 +16,6 @@ const Profile = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.PhotoUrl.value;
-        console.log(name, photo);
 
         // update user profile
         const profile = {
@@ -25,13 +25,20 @@ const Profile = () => {
         updateProfile(auth.currentUser, profile)
             .then(() => {
                 // Profile updated!
-                // toast.success("update successful")
+                Swal.fire({
+                    title: "Update successful!",
+                    icon: "success",
+                    draggable: true
+                });
+
                 Navigate("/profile")
             }).catch((error) => {
                 const errorMessage = error.message;
-                // toast.error(errorMessage);
-                console.log(errorMessage);
-                
+                Swal.fire({
+                    title: errorMessage,
+                    icon: "error",
+                    draggable: true
+                });
             });
     }
 
