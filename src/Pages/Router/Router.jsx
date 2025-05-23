@@ -38,12 +38,12 @@ export const router = createBrowserRouter([
                 element: <PrivateRouter><CreateGroup></CreateGroup></PrivateRouter>
             },
             {
-                path: "/allGroups",
+                path: "/groups",
                 loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 Component: AllGroups
             },
             {
-                path: "/myGroup",
+                path: "/myGroups",
                 loader: () => fetch('https://group-server-six.vercel.app/groups'),
                 hydrateFallbackElement: <Loader />,
                 element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRouter><UpdateGroup></UpdateGroup></PrivateRouter>
             },
             {
-                path: "/groupDetails/:id",
+                path: "/group/:id",
                 element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },
             {

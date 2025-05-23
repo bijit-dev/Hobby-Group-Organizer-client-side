@@ -30,7 +30,7 @@ const FeaturedGroupsCard = ({ group }) => {
 
                 </div>
                 <div className="px-6 pb-6">
-                    <Link to={`/groupDetails/${_id}`}>
+                    <Link to={`/group/${_id}`}>
                         <button className="btn btn-primary w-full ">See More</button>
                     </Link>
                 </div>

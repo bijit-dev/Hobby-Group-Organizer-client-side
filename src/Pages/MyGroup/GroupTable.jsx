@@ -64,7 +64,7 @@ const GroupTable = ({ group, groups, setGroups }) => {
             <td className="text-center">{maxMembers}</td>
             <td>{startDate}</td>
             <th>
-                <Link to={`/groupDetails/${_id}`}>
+                <Link to={`/group/${_id}`}>
                     <button className="btn btn-info btn-outline btn-sm hover:text-white">Info</button>
                 </Link>
             </th>

@@ -33,7 +33,7 @@ const Slider = () => {
                 
                 <SwiperSlide><Slide imges={BannerImg2} title="Create New Group" detile="I love photography, traveling to new places, reading inspiring books, coding creative projects, and enjoying peaceful music in my free time." button="Create Group" to="/createGroup"></Slide></SwiperSlide>
 
-                <SwiperSlide><Slide imges={BannerImg3} title="My Group" detile="My All Group" button="My Group" to="/myGroup"></Slide></SwiperSlide>
+                <SwiperSlide><Slide imges={BannerImg3} title="My Group" detile="My All Group" button="My Group" to="/myGroups"></Slide></SwiperSlide>
                 
             </Swiper>
         </>

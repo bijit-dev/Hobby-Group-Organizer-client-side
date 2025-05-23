@@ -33,11 +33,11 @@ const Navbar = () => {
 
     const lists = <>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>Home</NavLink></li>
-        <li><NavLink to="/allGroups" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>All Groups</NavLink></li>
+        <li><NavLink to="/groups" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>All Groups</NavLink></li>
 
         {/* privet router */}
         <li><NavLink to="/createGroup" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>Create Group</NavLink></li>
-        <li><NavLink to="/myGroup" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>MyGroup</NavLink></li>
+        <li><NavLink to="/myGroups" className={({ isActive }) => isActive ? "text-[#0EA106] underline text-lg font-bold" : "text-lg font-medium"}>MyGroup</NavLink></li>
     </>
 
     return (
