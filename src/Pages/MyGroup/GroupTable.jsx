@@ -22,7 +22,7 @@ const GroupTable = ({ group, groups, setGroups }) => {
             if (result.isConfirmed) {
 
                 // start deleting the group
-                fetch(`https://group-server-six.vercel.app/groups/groups/${_id}`, {
+                fetch(`https://group-server-six.vercel.app/groups/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -21,7 +21,9 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                loader: () => fetch('https://group-server-six.vercel.app/groups'),
+                hydrateFallbackElement: <Loader />
             },
             {
                 path: "/login",
@@ -43,19 +45,19 @@ export const router = createBrowserRouter([
             {
                 path: "/myGroup",
                 loader: () => fetch('https://group-server-six.vercel.app/groups'),
-                hydrateFallbackElement: <Loader/>,
+                hydrateFallbackElement: <Loader />,
                 element: <PrivateRouter><MyGroup></MyGroup></PrivateRouter>
             },
             {
                 path: "/updateGroup/:id",
                 loader: () => fetch('https://group-server-six.vercel.app/groups'),
-                hydrateFallbackElement: <Loader/>,
+                hydrateFallbackElement: <Loader />,
                 element: <PrivateRouter><UpdateGroup></UpdateGroup></PrivateRouter>
             },
             {
                 path: "/groupDetails/:id",
                 loader: () => fetch('https://group-server-six.vercel.app/groups'),
-                hydrateFallbackElement: <Loader/>,
+                hydrateFallbackElement: <Loader />,
                 element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },
             {

@@ -15,7 +15,7 @@ const UpdateGroup = () => {
         const newGroup = Object.fromEntries(formData.entries())
 
         // send updated coffee to the db
-        fetch(`https://group-server-six.vercel.app/groups/groups/${_id}`, {
+        fetch(`https://group-server-six.vercel.app/groups/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

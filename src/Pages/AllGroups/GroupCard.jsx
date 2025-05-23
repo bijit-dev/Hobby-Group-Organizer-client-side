@@ -21,12 +21,12 @@ const GroupCard = ({ group }) => {
             <td>{Category}</td>
             <td className="text-center">{maxMembers}</td>
             <td>{startDate}</td>
-            
+
             <td>
                 <Link to={`/groupDetails/ ${_id}`}>
-                <button className='btn w-full mt-4 btn-primary btn-soft hover:text-white'>See More</button>
-            </Link>
-                </td>
+                    <button className='btn w-full mt-4 btn-primary btn-soft hover:text-white'>See More</button>
+                </Link>
+            </td>
         </tr>
 
     );
