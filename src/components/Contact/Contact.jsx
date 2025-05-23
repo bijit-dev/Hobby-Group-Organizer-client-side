@@ -18,11 +18,11 @@ const Contact = () => {
 
                 {/* Contact Info */}
                 <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-4">Get in Touch</h2>
-                    <p className="text-gray-600 mb-6">
+                    <h2 className="text-3xl font-bold text-base-content  mb-4">Get in Touch</h2>
+                    <p className="text-base-400 mb-6">
                         Have questions or want to work with us? Feel free to reach out using the form or contact details below.
                     </p>
-                    <div className="space-y-4 text-gray-700">
+                    <div className="space-y-4 text-base-400">
                         <div className="flex items-center space-x-3">
                             <span className="text-blue-600 text-xl"><MdLocationOn /></span>
                             <span>123 Main Street, Dhaka, Bangladesh</span>
@@ -44,7 +44,7 @@ const Contact = () => {
                         <label className="block text-gray-700 font-medium mb-1">Name</label>
                         <input
                             type="text"
-                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                             placeholder="Your name"
                             required
                         />
@@ -53,7 +53,7 @@ const Contact = () => {
                         <label className="block text-gray-700 font-medium mb-1">Email</label>
                         <input
                             type="email"
-                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                             placeholder="Your email"
                             required
                         />
@@ -62,7 +62,7 @@ const Contact = () => {
                         <label className="block text-gray-700 font-medium mb-1">Message</label>
                         <textarea
                             rows="4"
-                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                             placeholder="Write your message..."
                             required
                         />

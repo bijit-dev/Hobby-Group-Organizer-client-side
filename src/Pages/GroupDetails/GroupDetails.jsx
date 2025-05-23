@@ -44,10 +44,7 @@ const handleJoin = () => {
 return (
     <div className="container mx-auto my-12 px-8">
         <section className="max-w-6xl mx-auto p-6 md:p-10">
-            {/* <Helmet>
-                    <title>Event {event?.name}</title>
-                </Helmet> */}
-            {/* Banner Image */}
+            {/* Group Image */}
             <div className="rounded-xl w-1/2 mx-auto overflow-hidden shadow mb-8">
                 <img src={imageURL} alt={name} className="w-full object-cover" />
             </div>

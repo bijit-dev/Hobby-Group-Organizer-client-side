@@ -2,9 +2,9 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className="container mx-auto my-15 px-6">
-            <h2 className="text-3xl font-bold text-center mb-5">Frequently Asked Questions</h2>
-            <p className="text-center mb-10">Here are some common questions and answers to help you.</p>
+        <div className="container bg-gray-100 py-16 mx-auto px-6">
+            <h2 className="text-3xl font-bold text-accent-content text-center mb-5">Frequently Asked Questions</h2>
+            <p className="text-center mb-10 text-gray-700">Here are some common questions and answers to help you.</p>
             
             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-2" defaultChecked />

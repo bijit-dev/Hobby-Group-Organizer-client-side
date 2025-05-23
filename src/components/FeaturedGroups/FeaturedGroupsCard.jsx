@@ -2,11 +2,7 @@ import { Link } from "react-router";
 
 const FeaturedGroupsCard = ({ group }) => {
     const { _id, name, Category, maxMembers, imageURL, startDate, description } = group;
-    // const sDate = new Date(startDate);
-    // const toDay = new Date();
 
-    // if (sDate <= toDay) {
-    // }
     return (
         <div className="card bg-base-100 shadow-lg">
             <figure className="w-full h-64">
