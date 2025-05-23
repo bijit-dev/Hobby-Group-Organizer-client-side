@@ -26,7 +26,8 @@ const Register = () => {
             Swal.fire({
                 title: "Login successfully!",
                 icon: "success",
-                draggable: true
+                showConfirmButton: false,
+                timer: 1500
             });
 
             // update user profile
@@ -41,18 +42,20 @@ const Register = () => {
                 }).catch((error) => {
                     const errorMessage = error.message;
                     Swal.fire({
-                                    title: errorMessage,
-                                    icon: "error",
-                                    draggable: true
-                                });
+                        title: errorMessage,
+                        icon: "error",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                 });
         }).catch((error) => {
             const errorMessage = error.message;
             Swal.fire({
-                            title: errorMessage,
-                            icon: "error",
-                            draggable: true
-                        });
+                title: errorMessage,
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1500
+            });
         });
     }
 
@@ -61,24 +64,26 @@ const Register = () => {
         googleSignIn().then(() => {
             Navigate(location?.state || '/')
             Swal.fire({
-                            title: "Google login successfully!",
-                            icon: "success",
-                            draggable: true
-                        });
+                title: "Google login successfully!",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }).catch((error) => {
             const errorMessage = error.message;
             Swal.fire({
-                            title: errorMessage,
-                            icon: "error",
-                            draggable: true
-                        });
+                title: errorMessage,
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1500
+            });
         });
     }
 
     return (
 
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-15">
-            
+
             <div className="card-body">
                 <h3 className="text-3xl text-center font-bold">Register now!</h3>
                 <form onSubmit={handleCreateUser} className="fieldset">
@@ -90,7 +95,7 @@ const Register = () => {
                     {/* photoURL field */}
                     <label className="label">PhotoURL</label>
                     <input type="URL" name='PhotoUrl' className="input" placeholder="PhotoUrl" />
-                    
+
 
                     {/* email input */}
                     <label className="label">Email</label>

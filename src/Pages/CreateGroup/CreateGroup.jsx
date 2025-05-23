@@ -25,7 +25,8 @@ const CreateGroup = () => {
                     Swal.fire({
                         title: "New Group added successfully!",
                         icon: "success",
-                        draggable: true
+                        showConfirmButton: false,
+                        timer: 1500
                     });
 
                     form.reset()

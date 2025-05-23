@@ -7,8 +7,8 @@ const GroupTable = ({ group, groups, setGroups }) => {
 
     const handleUpdate = (_id) => {
         Navigate(`/updateGroup/${_id}`);
-}
-    
+    }
+
     const handleDelete = (_id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -30,8 +30,9 @@ const GroupTable = ({ group, groups, setGroups }) => {
                         if (data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your Coffee has been deleted.",
-                                icon: "success"
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 1500
                             });
 
                             // remove the group from the state
@@ -69,10 +70,10 @@ const GroupTable = ({ group, groups, setGroups }) => {
                 </Link>
             </th>
             <th>
-                <button onClick={()=>handleUpdate(_id)} className="btn btn-success  btn-sm hover:text-white">Update</button>
+                <button onClick={() => handleUpdate(_id)} className="btn btn-success  btn-sm hover:text-white">Update</button>
             </th>
             <th>
-                <button onClick={()=>handleDelete(_id)} className="btn btn-error hover:bg-red-500 hover:text-white  btn-sm">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-error hover:bg-red-500 hover:text-white  btn-sm">Delete</button>
             </th>
         </tr>
     );

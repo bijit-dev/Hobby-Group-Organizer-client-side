@@ -20,18 +20,20 @@ const Login = () => {
 
         // login 
         signIn(email, password).then(() => {
-            Navigate(location?.state || '/')            
+            Navigate(location?.state || '/')
             Swal.fire({
                 title: "Login successfully!",
                 icon: "success",
-                draggable: true
+                showConfirmButton: false,
+                timer: 1500
             });
         }).catch((error) => {
             const errorMessage = error.message;
             Swal.fire({
                 title: errorMessage,
                 icon: "error",
-                draggable: true
+                showConfirmButton: false,
+                timer: 1500
             });
         });
     }
@@ -43,7 +45,8 @@ const Login = () => {
             Swal.fire({
                 title: "Login successfully!",
                 icon: "success",
-                draggable: true
+                showConfirmButton: false,
+                timer: 1500
             });
 
         }).catch((error) => {
@@ -51,7 +54,8 @@ const Login = () => {
             Swal.fire({
                 title: errorMessage,
                 icon: "error",
-                draggable: true
+                showConfirmButton: false,
+                timer: 1500
             });
         });
     }
@@ -61,8 +65,8 @@ const Login = () => {
     return (
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-15">
             <div className="card-body ">
-            <h3 className="text-3xl text-center font-bold mb-6">Login now!</h3>
-                
+                <h3 className="text-3xl text-center font-bold mb-6">Login now!</h3>
+
                 <form onSubmit={handleLogin} className="fieldset">
                     {/* email input */}
                     <label className="label">Email</label>
