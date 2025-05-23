@@ -1,6 +1,7 @@
 import FeaturedGroupsCard from "./FeaturedGroupsCard";
 
 const FeaturedGroups = ({ data }) => {
+    const newData =data.slice(0, 6);
 
     return (
         <div className=" container mx-auto px-5 my-12">
@@ -10,7 +11,7 @@ const FeaturedGroups = ({ data }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    data.map(group => <FeaturedGroupsCard key={group._id} group={group} />)}
+                    newData.map(group => <FeaturedGroupsCard key={group._id} group={group} />)}
             </div>
         </div>
     );

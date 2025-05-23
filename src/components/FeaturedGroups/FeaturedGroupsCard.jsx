@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 const FeaturedGroupsCard = ({ group }) => {
-    const { _id, name, Category, maxMembers, imageURL, startDate } = group;
+    const { _id, name, Category, maxMembers, imageURL, startDate, description } = group;
     const sDate = new Date(startDate);
     const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedStartDate = sDate.toLocaleDateString('en-US', options1);
@@ -12,35 +12,31 @@ const FeaturedGroupsCard = ({ group }) => {
 
     if (formattedStartDate <= formattedDate) {
         return (
-            <div className="card bg-base-100 w-96 shadow-lg">
-                <figure className="w-full ">
+            <div className="card bg-base-100 shadow-lg">
+                <figure className="w-full h-64">
                     <img width="100%"
-                        height="100%"
                         src={imageURL}
                         alt="Shoes"
                         className="rounded-xl" />
                 </figure>
-                <div className="card-body items-center text-center ">
+                <div className="card-body ">
                     <div className="flex justify-between items-center w-full text-lg">
-                        <p className="font-bold text-left ">Members: {maxMembers}</p>
+                        <p className="font-bold text-left ">Members: <span className="text-gray-500">{maxMembers}</span></p>
                         <p className="text-green-500 font-bold text-right">OnGoing</p>
                     </div>
                     <h2 className="card-title text-3xl">{name}</h2>
-                    <p className="text-lg font-medium">Category: {Category}</p>
+                    <p className="text-lg font-medium">Category: <span className="text-gray-500">{Category}</span></p>
+                    <p className="text-base font-medium">Description: <span className="text-gray-500">{description}</span></p>
 
                 </div>
                 <div className="px-6 pb-6">
-                    <Link to={`/groupDetails/ ${_id}`}>
+                    <Link to={`/groupDetails/${_id}`}>
                         <button className="btn btn-primary w-full ">See More</button>
                     </Link>
                 </div>
             </div>
         );
     }
-
-    // const groups = group.filter(group => group.category === 'featured');
-    // // console.log(groups);
-
 };
 
 export default FeaturedGroupsCard;

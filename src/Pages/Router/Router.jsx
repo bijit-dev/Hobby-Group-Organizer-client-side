@@ -56,8 +56,6 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/groupDetails/:id",
-                loader: () => fetch('https://group-server-six.vercel.app/groups'),
-                hydrateFallbackElement: <Loader />,
                 element: <PrivateRouter><GroupDetails></GroupDetails></PrivateRouter>
             },
             {
