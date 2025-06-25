@@ -63,7 +63,12 @@ return (
             </div>
 
 
-            <button onClick={handleJoin} className={`btn btn-primary`}>Join Group</button>
+            {
+                sDate >= toDay ?
+                    <button onClick={handleJoin} className={`btn btn-primary`}>Join Group</button>
+                    :
+                    <p className="text-red-500">You cannot join this group as the date has passed.</p>
+            }
         </section>
 
     </div>
